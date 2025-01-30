@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+communication:
+  strategy: ROUND_ROBIN
+  addresses:
+    - service2:8082
+    # Możesz tu dodać kolejne np. service3:8083, etc.
+  leader-address: service2:8082
+
+# Włączamy Actuator z metrykami Prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
