@@ -33,12 +33,36 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
-    ports:
-      - "3000:3000"
     depends_on:
       - prometheus
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
     networks:
       - my-network
+
+  jmeter:
+    image: justb4/jmeter
+    container_name: jmeter
+    depends_on:
+      - service1
+      - service2
+    networks:
+      - my-network
+    volumes:
+      - ./jmeter:/testplans
+      - ./jmeter-results:/results
+    command: [
+      "-n",
+      "-t", "/testplans/testPlan.jmx",
+      "-l", "/results/result.jtl",
+      "-e",
+      "-o", "/results/report"
+    ]
+
+volumes:
+  grafana-storage:
 
 networks:
   my-network:

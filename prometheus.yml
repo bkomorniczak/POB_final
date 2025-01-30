@@ -4,9 +4,11 @@ global:
 
 scrape_configs:
   - job_name: 'service1'
+    metrics_path: "/actuator/prometheus"
     static_configs:
-      - targets: ['service1:8081']  # Nazwa kontenera i port w Docker Compose
+      - targets: ['service1:8081']
 
   - job_name: 'service2'
+    metrics_path: "/actuator/prometheus"
     static_configs:
       - targets: ['service2:8082']
