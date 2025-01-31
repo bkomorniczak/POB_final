@@ -19,6 +19,8 @@ public class ChaosService {
         .register(meterRegistry);  }
 
   public void simulateChaos() {
+    chaosInvocationsCounter.increment();
+
     simulateDelay();
     simulateOverload();
   }

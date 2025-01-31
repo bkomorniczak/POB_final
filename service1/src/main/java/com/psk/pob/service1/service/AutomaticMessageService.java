@@ -1,6 +1,7 @@
 package com.psk.pob.service1.service;
 
 import com.psk.pob.communication.CommunicationStrategy;
+import com.psk.pob.service1.config.StrategyManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -8,18 +9,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class AutomaticMessageService {
 
-  private final CommunicationStrategy communicationStrategy;
+  private final StrategyManager strategyManager;
+
   private final String serviceName;
 
-
-  public AutomaticMessageService(CommunicationStrategy communicationStrategy, @Value("${spring.application.name}") String serviceName) {
-    this.communicationStrategy = communicationStrategy;
+  public AutomaticMessageService(StrategyManager strategyManager,
+      @Value("${spring.application.name}") String serviceName) {
+    this.strategyManager = strategyManager;
     this.serviceName = serviceName;
   }
 
   @Scheduled(fixedRate = 5000) // co 5 sek
   public void broadcastPeriodicMessage() {
-    String message = "Cześć, tu " + serviceName + "! Godzina = " + System.currentTimeMillis();
-    communicationStrategy.sendMessage(message);
+    CommunicationStrategy strategy = strategyManager.getCurrentStrategy();
+    strategy.sendMessage("Hello from " + serviceName);
   }
 }
