@@ -1,4 +1,4 @@
-package com.psk.pob.service2.config;
+package com.psk.pob.service3.config;
 
 import com.psk.pob.communication.CommunicationStrategy;
 import com.psk.pob.communication.StrategyFactory;

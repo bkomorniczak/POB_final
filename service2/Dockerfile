@@ -17,5 +17,8 @@ WORKDIR /app
 
 COPY --from=build /app/service2/build/libs/service2-*.jar app.jar
 
+# ✅ Kopiujemy application.yml do katalogu, w którym Spring Boot go znajdzie
+COPY --from=build /app/service2/src/main/resources/application.yml /app/application.yml
+
 EXPOSE 8082
 ENTRYPOINT ["java", "-jar", "app.jar"]

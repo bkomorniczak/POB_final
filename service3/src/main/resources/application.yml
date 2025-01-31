@@ -1,17 +1,16 @@
 server:
-  port: 8081
+  port: 8083
 
 spring:
   application:
-    name: service1
+    name: service3
+
 communication:
   strategy: BROADCAST  # Możliwe wartości: LEADER, BROADCAST, ROUND_ROBIN
   nodes:
+    - http://service1:8081
     - http://service2:8082
-    - http://service3:8083
-chaos:
-  delay-millis: 200
-  overload-active: true
+
 management:
   endpoints:
     web:

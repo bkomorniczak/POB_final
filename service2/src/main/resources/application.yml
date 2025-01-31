@@ -1,11 +1,17 @@
 server:
   port: 8082
 
+spring:
+  application:
+    name: service2
+
 communication:
-  # Możesz tu ustawić inny strategy jeśli chcesz
-  strategy: LEADER
-  leader-address: service2:8082
-  # addresses: [service1:8081, service3:8083, ...]
+  strategy: BROADCAST  # Possible values: LEADER, BROADCAST, ROUND_ROBIN
+  nodes:
+    - http://service1:8081
+    - http://service3:8083
+  leader-address: service1:8081
+
 
 management:
   endpoints:
@@ -19,3 +25,6 @@ management:
     metrics:
       export:
         enabled: true
+logging:
+  level:
+    org.springframework.core.env: DEBUG

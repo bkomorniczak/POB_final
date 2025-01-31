@@ -1,14 +1,9 @@
 plugins {
-	// Deklarujemy pluginy, ale nie włączamy ich w projekcie głównym (apply false)
 	id("org.springframework.boot") version "3.4.2" apply false
 	id("io.spring.dependency-management") version "1.1.7" apply false
-
-	// Kotlin DSL wymaga pluginu 'java' w cudzysłowie lub backtickach
-	// ale można też go włączyć w subprojects:
-	`java`
+	java
 }
 
-// Wspólna konfiguracja dla wszystkich subprojektów
 subprojects {
 	group = "com.psk"
 	version = "0.0.1-SNAPSHOT"
@@ -28,7 +23,6 @@ subprojects {
 		mavenCentral()
 	}
 
-	// Jeśli używasz Lomboka do adnotacji, pamiętaj o rozszerzeniu compileOnly -> annotationProcessor
 	configurations {
 		compileOnly {
 			extendsFrom(configurations.annotationProcessor.get())
