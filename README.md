@@ -8,7 +8,7 @@ curl -X POST "http://localhost:8081/chaos/overload?overloadActive=true"
 curl -X POST "http://localhost:8081/chaos/overload?overloadActive=false"
 
 # Zmiana algorytmu w runtime
-curl -X POST "http://service1:8081/strategy/change?newStrategy=LEADER"
+curl -X POST "http://localhost:8081/strategy/change?newStrategy=LEADER"
 
 
 # uruchom aplikacje

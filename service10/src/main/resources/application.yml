@@ -1,0 +1,33 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: service3
+
+communication:
+  strategy: BROADCAST  # Możliwe wartości: LEADER, BROADCAST, ROUND_ROBIN
+  nodes:
+    - http://service1:8081
+    - http://service2:8082
+    - http://service3:8083
+    - http://service4:8084
+    - http://service5:8085
+    - http://service6:8086
+    - http://service7:8087
+    - http://service8:8088
+    - http://service9:8089
+    - http://service11:8101
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true

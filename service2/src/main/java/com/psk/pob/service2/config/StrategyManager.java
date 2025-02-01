@@ -18,7 +18,17 @@ public class StrategyManager {
     // Na start ustawiamy np. BROADCAST:
     this.currentStrategy = strategyFactory.createStrategy(
         StrategyType.BROADCAST,
-        List.of("http://service1:8081", "http://service2:8082")
+        List.of("http://service1:8081",
+            "http://service2:8082",
+            "http://service3:8083",
+            "http://service4:8084",
+            "http://service5:8085",
+            "http://service6:8086",
+            "http://service7:8087",
+            "http://service8:8088",
+            "http://service9:8089",
+            "http://service10:8099"
+        )
     );
   }
 

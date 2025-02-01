@@ -30,6 +30,77 @@ services:
     networks:
       - my-network
 
+  service4:
+    build:
+      context: .
+      dockerfile: ./service4/Dockerfile
+    container_name: service4
+    ports:
+      - "8084:8084"
+    networks:
+      - my-network
+
+  service5:
+    build:
+      context: .
+      dockerfile: ./service5/Dockerfile
+    container_name: service5
+    ports:
+      - "8085:8085"
+    networks:
+      - my-network
+
+  service6:
+    build:
+      context: .
+      dockerfile: ./service6/Dockerfile
+    container_name: service6
+    ports:
+      - "8086:8086"
+    networks:
+      - my-network
+
+  service7:
+    build:
+      context: .
+      dockerfile: ./service7/Dockerfile
+    container_name: service7
+    ports:
+      - "8087:8087"
+    networks:
+      - my-network
+
+  service8:
+    build:
+      context: .
+      dockerfile: ./service8/Dockerfile
+    container_name: service8
+    ports:
+      - "8088:8088"
+    networks:
+      - my-network
+
+  service9:
+    build:
+      context: .
+      dockerfile: ./service9/Dockerfile
+    container_name: service9
+    ports:
+      - "8089:8089"
+    networks:
+      - my-network
+
+  service10:
+    build:
+      context: .
+      dockerfile: ./service10/Dockerfile
+    container_name: service10
+    ports:
+      - "8099:8099"
+    networks:
+      - my-network
+
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus

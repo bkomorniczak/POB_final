@@ -9,7 +9,15 @@ communication:
   strategy: BROADCAST  # Possible values: LEADER, BROADCAST, ROUND_ROBIN
   nodes:
     - http://service1:8081
-    - http://service3:8083
+    - http://service2:8083
+    - http://service2:8084
+    - http://service2:8085
+    - http://service2:8086
+    - http://service2:8087
+    - http://service2:8088
+    - http://service2:8089
+    - http://service2:8099
+    - http://service2:8101
   leader-address: service1:8081
 
 

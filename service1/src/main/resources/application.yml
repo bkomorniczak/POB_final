@@ -8,7 +8,15 @@ communication:
   strategy: BROADCAST  # Możliwe wartości: LEADER, BROADCAST, ROUND_ROBIN
   nodes:
     - http://service2:8082
-    - http://service3:8083
+    - http://service2:8083
+    - http://service2:8084
+    - http://service2:8085
+    - http://service2:8086
+    - http://service2:8087
+    - http://service2:8088
+    - http://service2:8089
+    - http://service2:8099
+    - http://service2:8101
 chaos:
   delay-millis: 200
   overload-active: true

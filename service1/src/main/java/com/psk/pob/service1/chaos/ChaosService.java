@@ -13,7 +13,6 @@ public class ChaosService {
 
   public ChaosService(ChaosConfig chaosConfig, MeterRegistry meterRegistry) {
     this.chaosConfig = chaosConfig;
-    // Rejestrujemy licznik
     this.chaosInvocationsCounter = Counter.builder("chaos_invocations_total")
         .description("Ile razy wywołano chaos (delay/overload)")
         .register(meterRegistry);  }

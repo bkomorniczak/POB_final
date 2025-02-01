@@ -17,3 +17,39 @@ scrape_configs:
     metrics_path: "/actuator/prometheus"
     static_configs:
       - targets: ['service3:8083']
+
+  - job_name: 'service4'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service4:8084']
+
+  - job_name: 'service5'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service5:8085']
+
+  - job_name: 'service6'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service6:8086']
+
+  - job_name: 'service7'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service7:8087']
+
+  - job_name: 'service8'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service8:8088']
+
+  - job_name: 'service9'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service9:8089']
+
+  - job_name: 'service10'
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ['service10:8099']
+
